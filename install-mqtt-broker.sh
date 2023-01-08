@@ -143,6 +143,10 @@ cat <<EOF > ./config.log
     Client Certificate File : ./client/client.crt
     Client key file : ./client/client.key
     Topic name : $TOPIC_NAME
+
+    if you run this script in your server, you should add the $HOST_NAME to your local hosts (local PC)
+    for ubuntu run following command :
+    sudo bash -c "echo \"$SYSTEM_IP $HOST_NAME\" >> /etc/hosts"
     =========================================================
 EOF
 
