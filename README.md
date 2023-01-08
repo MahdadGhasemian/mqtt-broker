@@ -1,6 +1,8 @@
 # mqtt-broker
 Config a secure MQTT broker
 
+![Detail blog](https://mahdad.me/blog/2023-01-08-mqtt-broker)
+
 
 * $ mkdir mosquitto-data
 * $ cd mosquitto-data
