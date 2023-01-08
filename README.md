@@ -1,7 +1,7 @@
 # mqtt-broker
 Config a secure MQTT broker
 
-![Detail blog](https://mahdad.me/blog/2023-01-08-mqtt-broker)
+[Detail - Blog](https://mahdad.me/blog/2023-01-08-mqtt-broker)
 
 
 * $ mkdir mosquitto-data
