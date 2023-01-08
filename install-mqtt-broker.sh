@@ -33,8 +33,8 @@ then
 fi
 
 ## Clear previous folders and stop the containers
-sudo docker stop mosquitto-ssl-2 || true
-sudo docker rm mosquitto-ssl-2 || true
+sudo docker stop mosquitto-ssl || true
+sudo docker rm mosquitto-ssl || true
 sudo rm -rf ./config
 sudo rm -rf ./data
 sudo rm -rf ./log
@@ -111,18 +111,18 @@ EOF
 ## Run MQTT Broker inside docker
 sudo docker run -d --restart always \
 	-p 8883:8883 \
-	--name mosquitto-ssl-2 \
+	--name mosquitto-ssl \
 	--mount src=$PWD/config,target=/mosquitto/config,type=bind \
 	--mount src=$PWD/data,target=/mosquitto/data,type=bind \
 	--mount src=$PWD/log,target=/mosquitto/log,type=bind \
 	eclipse-mosquitto
 
 ## Generate password file
-cmd_str="sudo docker exec --tty mosquitto-ssl-2 sh -c 'touch passwordfile; mosquitto_passwd -b passwordfile $USERNAME $PASSWORD; mv passwordfile mosquitto/config/; eval "$(exit 0)";'"
+cmd_str="sudo docker exec --tty mosquitto-ssl sh -c 'touch passwordfile; mosquitto_passwd -b passwordfile $USERNAME $PASSWORD; mv passwordfile mosquitto/config/; eval "$(exit 0)";'"
 eval $cmd_str
 
 ## Enable passwordfile
-sudo docker restart mosquitto-ssl-2
+sudo docker restart mosquitto-ssl
 
 ## Generate log and client folders to use in client side
 sudo cp ./config/certs/ca.crt ./client/ca.crt
