@@ -18,8 +18,13 @@ $ sudo curl -s https://raw.githubusercontent.com/MahdadGhasemian/mqtt-broker/mai
 
 ### The scripts will show following log
 
-![Script's log](https://user-images.githubusercontent.com/48379992/211188037-b79c12a2-7ef5-4087-bcb3-228fb68fd919.png)
+![Script's log](https://user-images.githubusercontent.com/48379992/211197764-01993698-6bff-4ce9-9630-80b3472847c9.png)
+
+* copy the last line of the log and run it on your local system like this:
+    __$ sudo bash -c "echo \"x.x.x.x mqtt-host-tekp\" >> /etc/hosts"__
+* copy __client__ folder to your local, it has three files (ca.crt  client.crt  client.key)
+
 
 ### How to configure the MQTTX client application
 
-![How to configure the MQTTX client app](https://user-images.githubusercontent.com/48379992/211188044-63a553ec-8702-4ccb-9670-f373a2def8e3.png)
+![How to configure the MQTTX client app](https://user-images.githubusercontent.com/48379992/211197547-da681c01-5797-49a5-a778-caf5237ddba4.png)
